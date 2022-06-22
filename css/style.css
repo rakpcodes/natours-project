@@ -9,4 +9,16 @@ Dark green: #28b485
 
 body {
     font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 125%; /* opted to set font-size using % and a base of 20px instead of 16px*/
+    line-height: 1.7;
+    color: #777
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,#7ed56fc0,#28b485c0), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%)
 }
