@@ -33,3 +33,30 @@ body {
 .logo{
     height: 35px;
 }
+
+.headerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -90%) /* transform effects the positioning of the element itself instead of in relation to the parent */
+}
+
+.headingPrimary{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.headingPrimaryMain{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 50px;
+
+}
+
+.headingPrimarySub{
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 8px;
+}
