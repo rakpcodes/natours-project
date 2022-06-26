@@ -10,7 +10,7 @@ Dark green: #28b485
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 125%; /* opted to set font-size using % and a base of 20px instead of 16px*/
+    font-size: 125%;
     line-height: 1.7;
     color: #777
 }
