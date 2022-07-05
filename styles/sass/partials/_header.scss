@@ -5,50 +5,52 @@
     background-position: top;
     clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
     position: relative; /* added to allow absolute positioning for logoBox */
+    
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 3.5rem;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-49%, -90%); /* transform effects the positioning of the element itself instead of in relation to the parent */
+        text-align: center; /* centers the anchor tag within the container without having use position on the element itself */
+    }
 }
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-
-.header__logo{
-    height: 3.5rem;
-}
-
-.header__text-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-49%, -90%); /* transform effects the positioning of the element itself instead of in relation to the parent */
-    text-align: center; /* centers the anchor tag within the container without having use position on the element itself */
-}
 
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden; /* stops a slight shake that happens at the end of the animation */
     margin-bottom: 6rem;
+    
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 5rem;
+        animation: moveInLeft 1s ease-out;
+        margin-left: 4rem; /* Temporary fix as text-align is not behaving for this element */
+    
+    }
+    
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.8rem;
+        animation: moveInRight 1s ease-out;
+    }
 }
 
-.heading-primary--main{
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 5rem;
-    animation: moveInLeft 1s ease-out;
-    margin-left: 4rem; /* Temporary fix as text-align is not behaving for this element */
-
-}
-
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 0.8rem;
-    animation: moveInRight 1s ease-out;
-}
 
 @keyframes moveInLeft {
     0% {
@@ -97,57 +99,63 @@
 
 }
 
-.btn:link, .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block; /* allows padding to work on element now that it is no longer inline */
-    border-radius: 10rem;
-    transition: all 0.2s;
-    position: relative;
-    font-size: 1.6rem;
-}
+.btn {
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn--white {
-    background-color: #fff;
-    color: $grey;
+    &:link, &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block; /* allows padding to work on element now that it is no longer inline */
+        border-radius: 10rem;
+        transition: all 0.2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
     
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%; 
+        width: 100%;
+        /* height and width are in relation to parent element */
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+    
+    &--white {
+        background-color: #fff;
+        color: $grey;
+        
+        &::after {
+            background-color: #fff;
+        }
+    }
+    
+    &--animated{
+        animation: moveInBottom 1s ease-out 0.75s;
+        animation-fill-mode: backwards; /* applies the animation property at 0% immediately  */
+    }
 }
 
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%; 
-    width: 100%;
-    /* height and width are in relation to parent element */
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-}
 
-.btn--white::after {
-    background-color: #fff;
-}
 
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
 
-.btn--animated{
-    animation: moveInBottom 1s ease-out 0.75s;
-    animation-fill-mode: backwards; /* applies the animation property at 0% immediately  */
-}
