@@ -248,63 +248,6 @@ body {
   color: #777;
 }
 
-.header {
-  height: 95vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.7529411765)), to(rgba(40, 180, 133, 0.7529411765))), url(../img/hero.jpg);
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7529411765), rgba(40, 180, 133, 0.7529411765)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
-  position: relative;
-  /* added to allow absolute positioning for logoBox */
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-49%, -90%);
-          transform: translate(-49%, -90%);
-  /* transform effects the positioning of the element itself instead of in relation to the parent */
-  text-align: center;
-  /* centers the anchor tag within the container without having use position on the element itself */
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  /* stops a slight shake that happens at the end of the animation */
-  margin-bottom: 6rem;
-}
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 5rem;
-  -webkit-animation: moveInLeft 1s ease-out;
-          animation: moveInLeft 1s ease-out;
-  margin-left: 4rem;
-  /* Temporary fix as text-align is not behaving for this element */
-}
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 0.8rem;
-  -webkit-animation: moveInRight 1s ease-out;
-          animation: moveInRight 1s ease-out;
-}
-
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -394,12 +337,47 @@ body {
             transform: translate(0);
   }
 }
+.header {
+  height: 95vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.7529411765)), to(rgba(40, 180, 133, 0.7529411765))), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7529411765), rgba(40, 180, 133, 0.7529411765)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+  position: relative; /* added to allow absolute positioning for logoBox */
+}
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  height: 3.5rem;
+}
+.header__text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-49%, -90%);
+          transform: translate(-49%, -90%); /* transform effects the positioning of the element itself instead of in relation to the parent */
+  text-align: center; /* centers the anchor tag within the container without having use position on the element itself */
+}
+
+.row {
+  max-width: 114rem;
+  background-color: #55c57a;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
-  display: inline-block;
-  /* allows padding to work on element now that it is no longer inline */
+  display: inline-block; /* allows padding to work on element now that it is no longer inline */
   border-radius: 10rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -448,6 +426,30 @@ body {
   -webkit-animation: moveInBottom 1s ease-out 0.75s;
           animation: moveInBottom 1s ease-out 0.75s;
   -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-  /* applies the animation property at 0% immediately  */
+          animation-fill-mode: backwards; /* applies the animation property at 0% immediately  */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; /* stops a slight shake that happens at the end of the animation */
+  margin-bottom: 6rem;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 5rem;
+  -webkit-animation: moveInLeft 1s ease-out;
+          animation: moveInLeft 1s ease-out;
+  margin-left: 4rem; /* Temporary fix as text-align is not behaving for this element */
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.8rem;
+  -webkit-animation: moveInRight 1s ease-out;
+          animation: moveInRight 1s ease-out;
 }
