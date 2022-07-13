@@ -366,11 +366,28 @@ body {
 
 .row {
   max-width: 114rem;
-  background-color: #55c57a;
   margin: 0 auto;
 }
 .row:not(:last-child) {
   margin-bottom: 8rem;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^=col-] {
+  background-color: tomato;
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+.row .col-one-of-two {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-one-of-three {
+  width: calc((100% - 2 * 6rem) / 3);
 }
 
 .btn:link, .btn:visited {
