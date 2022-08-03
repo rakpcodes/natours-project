@@ -456,6 +456,14 @@ body {
   padding: 20rem 0;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.7529411765)), to(rgba(40, 180, 133, 0.7529411765))), url(../img/nat-4.jpg);
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7529411765), rgba(40, 180, 133, 0.7529411765)), url(../img/nat-4.jpg);
+  background-size: cover;
+  -webkit-transform: skewY(-6deg);
+          transform: skewY(-6deg);
+  margin-top: -10rem;
+}
+.section-features > * {
+  -webkit-transform: skewY(6deg);
+          transform: skewY(6deg);
 }
 
 .btn:link, .btn:visited {
