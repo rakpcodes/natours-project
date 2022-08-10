@@ -529,7 +529,7 @@ body {
 }
 
 .btn-text:link, .btn-text:visited {
-  color: #55c57a;
+  color: colr;
   font-size: 1.6rem;
   display: inline-block;
   text-decoration: none;
