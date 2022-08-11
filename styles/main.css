@@ -476,6 +476,11 @@ body {
   margin-top: -10rem;
 }
 
+.section-testimony {
+  padding: 15rem 0;
+  position: relative;
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -540,7 +545,7 @@ body {
 }
 
 .btn-text:link, .btn-text:visited {
-  color: colr;
+  color: #55c57a;
   font-size: 1.6rem;
   display: inline-block;
   text-decoration: none;
@@ -778,4 +783,81 @@ body {
 .rotating-card__price-dollar {
   font-size: 6rem;
   font-weight: 100;
+}
+
+.testimony {
+  width: 75%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.105);
+          box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.105);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem 6rem 6rem 9rem;
+  font-size: 1.6rem;
+  -webkit-transform: skewX(-12deg);
+          transform: skewX(-12deg);
+}
+.testimony__shape {
+  margin: 0;
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-transform: translateX(-3rem) skewX(12deg);
+          transform: translateX(-3rem) skewX(12deg);
+  position: relative;
+}
+.testimony__image {
+  height: 100%;
+  -webkit-transform: translateX(-3.75rem) scale(1.4);
+          transform: translateX(-3.75rem) scale(1.4);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.testimony__text {
+  -webkit-transform: skewX(12deg);
+          transform: skewX(12deg);
+}
+.testimony__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 25%);
+          transform: translate(-50%, 25%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.testimony:hover .testimony__caption {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.testimony:hover .testimony__image {
+  -webkit-transform: translateX(-3.75rem) scale(1);
+          transform: translateX(-3.75rem) scale(1);
+  -webkit-filter: blur(10px) brightness(75%);
+          filter: blur(10px) brightness(75%);
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.2;
+}
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
