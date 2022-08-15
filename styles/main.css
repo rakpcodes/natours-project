@@ -378,6 +378,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
 .u-margin-bottom-big {
   margin-bottom: 8rem;
 }
@@ -479,6 +483,24 @@ body {
 .section-testimony {
   padding: 15rem 0;
   position: relative;
+}
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.booking {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.89) 0%, rgba(255, 255, 255, 0.89) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: 100%;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 50rem;
+}
+.booking__form {
+  width: 50%;
+  padding: 6rem;
 }
 
 .btn:link, .btn:visited {
@@ -860,4 +882,40 @@ body {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__input {
+  display: block;
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+}
+.form__input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #ff7730;
+}
+.form::-webkit-input-placeholder {
+  color: #999;
+}
+.form::-moz-placeholder {
+  color: #999;
+}
+.form:-ms-input-placeholder {
+  color: #999;
+}
+.form::-ms-input-placeholder {
+  color: #999;
+}
+.form::placeholder {
+  color: #999;
 }
