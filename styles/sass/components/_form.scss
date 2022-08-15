@@ -41,9 +41,56 @@
             transition: all 0.3s;
         }
         
-        &__input:placeholder-shown + &__label {
+        &__input:placeholder-shown + &__label { // + is a direct-sibling selector
             opacity: 0;
             visibility: hidden;
             transform: translateY(-4rem);
         }
+
+        &__radio-group {
+            display: inline-block;
+            width: 49%;
+        }
+
+        &__radio-input {
+            display: none;
+        }
+
+        &__radio-label {
+            font-size: $default-font-size;
+            cursor: pointer;
+            position: relative;
+            padding-left: 5rem;
+        }
+
+        &__radio-button {
+            display: inline-block;
+            height: 3rem;
+            width: 3rem;
+            border: 5px solid $color-primary;
+            border-radius: 50%;
+            position: absolute;
+            top:-0.5rem;
+            left: 0;
+            
+            
+            &::after {
+                content: "";
+                display: block;
+                height: 1.3rem;
+                width: 1.3rem;
+                background-color: $color-primary;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+        }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
 }
