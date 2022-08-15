@@ -50,10 +50,12 @@
         &__radio-group {
             display: inline-block;
             width: 49%;
+            position: relative;
         }
 
         &__radio-input {
-            display: none;
+            position: absolute;
+            z-index: -1;
         }
 
         &__radio-label {
@@ -61,6 +63,7 @@
             cursor: pointer;
             position: relative;
             padding-left: 5rem;
+            transition: all 0.3s;
         }
 
         &__radio-button {
@@ -90,7 +93,13 @@
             }
         }
 
-    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    &__radio-input:checked ~ &__radio-label &__radio-button::after { // ~ is a direct-sibling selector
         opacity: 1;
+    }    
+
+    &__radio-input:focus ~ &__radio-label {
+        outline: solid 3px rgba($color-primary, 0.4);
+        outline-offset: 1.8rem;
     }
+
 }
