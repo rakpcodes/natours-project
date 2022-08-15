@@ -902,20 +902,50 @@ body {
   outline: none;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #55c57a;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form__input:focus:invalid {
   border-bottom: 3px solid #ff7730;
 }
-.form::-webkit-input-placeholder {
+.form__input::-webkit-input-placeholder {
   color: #999;
 }
-.form::-moz-placeholder {
+.form__input::-moz-placeholder {
   color: #999;
 }
-.form:-ms-input-placeholder {
+.form__input:-ms-input-placeholder {
   color: #999;
 }
-.form::-ms-input-placeholder {
+.form__input::-ms-input-placeholder {
   color: #999;
 }
-.form::placeholder {
+.form__input::placeholder {
   color: #999;
+}
+.form__label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form__input:-moz-placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__input:-ms-input-placeholder + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
 }

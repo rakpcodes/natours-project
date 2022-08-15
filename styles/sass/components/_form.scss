@@ -17,16 +17,33 @@
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-            border-bottom: 3px solid $color-secondary-dark;
+            border-bottom: 3px solid $color-primary;
+            transition: all 0.3s;
+
+            &:invalid {
+                border-bottom: 3px solid $color-secondary-dark;
+                }
+
             }
-    }
 
-    &::placeholder {
-        color: $color-grey-dark-2;
-    }
+        &::placeholder {
+            color: $color-grey-dark-2;
+            }
 
-    &__label {
-
-
-    }
+        }
+        
+        &__label {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-left: 2rem;
+            margin-top: 0.7rem;
+            transition: all 0.3s;
+        }
+        
+        &__input:placeholder-shown + &__label {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-4rem);
+        }
 }
