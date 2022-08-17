@@ -1177,3 +1177,20 @@ body {
   outline: solid 3px rgba(85, 197, 122, 0.4);
   outline-offset: 1.8rem;
 }
+
+.popup {
+  background-color: rgba(42, 42, 42, 0.678);
+  height: 100vh;
+  position: relative;
+}
+.popup__content {
+  background-color: white;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
