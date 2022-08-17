@@ -1157,8 +1157,8 @@ body {
 .form__radio-button::after {
   content: "";
   display: block;
-  height: 1.3rem;
-  width: 1.3rem;
+  height: 1.2rem;
+  width: 1.2rem;
   background-color: #55c57a;
   border-radius: 50%;
   position: absolute;
